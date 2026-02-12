@@ -1,61 +1,74 @@
-🌾 ##Fertilizer Recommendation System (Punjab)##
-** working link ** - 
+# 🌾 Punjab Fertilizer Recommendation System
 
-** Overview **
+**working link** - 
 
-This project is a crop-specific fertilizer recommendation system for Wheat and Rice cultivation in Punjab.
+## 📌 Overview
 
-It predicts nutrient requirement levels (Nitrogen, Phosphorus, Potassium) based on basic field information and converts them into fertilizer quantity ranges (kg per acre and total kg).
+This project is a **crop-specific fertilizer recommendation system** designed for **Wheat and Rice cultivation in Punjab**.
 
-The system is built as an applied machine learning project using agronomic rules and a Random Forest model.
+The system predicts nutrient requirement levels — **Nitrogen (N), Phosphorus (P), and Potassium (K)** — based on field conditions and converts them into **fertilizer quantity ranges (kg per acre and total kg for the field)**.
 
-** Problem **
+It is built as an **applied machine learning project** that combines agronomic rules with a Random Forest model and an interactive Streamlit interface.
 
-Many farmers do not have access to soil testing facilities.
-This system provides an advisory recommendation based on:
+---
 
-Crop type (Wheat / Rice)
+## 🎯 Problem Statement
 
-Growth stage (days since sowing/transplanting)
+Many farmers do not have access to laboratory soil testing facilities. As a result, fertilizer usage is often imbalanced.
 
-Soil type
+This system provides a **decision-support recommendation** based on:
 
-Previous N, P, K application
+- **Crop type** (Wheat / Rice)
+- **Days since sowing / transplanting**
+- **Growth stage**
+- **Soil type**
+- **Previous N, P, K application levels**
+- **Time since last fertilizer application**
+- **Irrigation history**
+- **Field area (acres)**
 
-Time since last fertilizer
+---
 
-Irrigation information
+## 🧠 Methodology
 
-Field area
+### 1️⃣ Dataset Design
 
-Method
+- Separate datasets were generated for **Wheat** and **Rice** using agronomic logic based on Punjab cultivation practices.
+- Nutrient requirement levels were categorized as:
+  - **Low**
+  - **Medium**
+  - **High**
 
-Crop-specific datasets were generated using agronomic logic.
+### 2️⃣ Machine Learning Model
 
-A multi-output Random Forest model was trained to predict:
+- Model Used: **Random Forest (Multi-Output Classification)**
+- Target Variables:
+  - `N_class`
+  - `P_class`
+  - `K_class`
 
-N requirement class (Low / Medium / High)
+The model predicts nutrient requirement classes based on input field features.
 
-P requirement class
+### 3️⃣ Output Conversion
 
-K requirement class
+Predicted nutrient classes are converted into:
 
-Predicted classes are converted into fertilizer quantity ranges (kg/acre).
+- **kg per acre**
+- **Total kg required for the entire field**
 
-Tech Stack
+This keeps the ML model simple and interpretable while applying agronomic ranges for quantity estimation.
 
-Python
+---
 
-Pandas
+## 💻 Tech Stack
 
-Scikit-learn
+- **Python**
+- **Pandas**
+- **Scikit-learn**
+- **Streamlit**
+- **Joblib**
 
-Streamlit
+---
 
-** Notes ** 
+## 📂 Project Structure
 
-This is a decision-support tool.
-
-Dataset is rule-generated.
-
-Not a replacement for laboratory soil testing.
